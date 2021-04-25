@@ -8441,8 +8441,9 @@ h1, h2, h3, h4, h5,
       font-size: 40px; } }
 
 .slider-text h2 {
-  font-weight: 800; }
+  font-weight: 800;}
   .slider-text h2 span {
+    font-size: 25px;
     color: #FFAC00;
     text-decoration: underline; }
 

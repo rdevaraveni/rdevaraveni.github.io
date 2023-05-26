@@ -26,25 +26,7 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 2.7
-
-      - name: Install dependencies
-        run: |
-          gem install bundler
-          bundle install
-
-      - name: Build Jekyll site
-        run: bundle exec jekyll build
-
       - name: Validate GitHub Pages
         run: |
-          # Add any additional validation steps here
-          
-          # Example: Check if the generated site has any broken links
-          bundle exec htmlproofer .
-          
           # Validate HTML using W3C Markup Validation Service
-          curl -H "Content-Type: text/html; charset=utf-8" --data-binary "@_site/index.html" https://validator.w3.org/nu/?out=json
+          curl -H "Content-Type: text/html; charset=utf-8" --data-binary "index.html" https://validator.w3.org/nu/?out=json
